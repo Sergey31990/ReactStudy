@@ -1,0 +1,11 @@
+.nav {
+    grid-area: navigation;
+    border: 1px solid black;
+    height: 700px;
+  }
+  .ul {
+    list-style-type: none;
+   align-self: center;
+   margin: 0;
+   padding: 10px;
+  }

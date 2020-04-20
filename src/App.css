@@ -8,31 +8,5 @@
   "footer footer footer";
   grid-gap: 10px
 }
-.MainPage-header {
-  grid-area: header;
-  border: 1px solid black;
-}
-.MainPage-nav {
-  grid-area: navigation;
-  border: 1px solid black;
-  height: 700px;
-}
-.MainPage-nav ul{
-  list-style-type: none;
- align-self: center;
- margin: 0;
- padding: 10px;
 
-}
-MainPage-content {
-  grid-area: content;
-  border: 1px solid black;
-}
-.MainPage-content img {
- width: 100%;
- height: 200px;
-}
-.MainPage-footer {
-  grid-area: footer;
-  border: 1px solid black;
-}
+

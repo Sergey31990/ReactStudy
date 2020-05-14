@@ -1,8 +1,9 @@
 .content {
     grid-area: content;
     border: 1px solid black;
+    background-color: #76cff5;
   }
-  .content img {
+  .content_img {
    width: 100%;
    height: 200px;
   }

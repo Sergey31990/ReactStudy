@@ -1,0 +1,20 @@
+.post {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #b8f0af;
+}
+.ava {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.ava img {
+    width: 100%;
+    height: 100%;
+}

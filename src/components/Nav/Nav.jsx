@@ -5,8 +5,8 @@ const Nav = () => {
     return (
         <nav className={clases.nav}>
         <ul className={clases.ul}>
-          <li>Моя страница</li>
-          <li>Сообщения</li>
+          <li><a href="/content">Моя страница</a></li>
+          <li><a href="/dialog">Сообщения</a></li>
           <li>Музыка</li>
           <li>Друзья</li>
           <li>Группы</li>

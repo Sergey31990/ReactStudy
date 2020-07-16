@@ -5,10 +5,10 @@ import clases from './My_posts.module.css';
 const Posts = () => {
     return (
         <div className={clases.posts}>
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          <Post text='text 1'/>
+          <Post text='text 2'/>
+          <Post text='text 3'/>
+          <Post text='text 4'/>
         </div>
     )
 }

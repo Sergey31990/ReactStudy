@@ -1,7 +1,7 @@
 import React from 'react';
 import clases from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={clases.post}>
 
@@ -10,7 +10,7 @@ const Post = () => {
           </div>
 
           <div className={clases.text}>
-            Hello world!
+            {props.text}
           </div>
           
         </div>

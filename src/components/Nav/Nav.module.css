@@ -9,3 +9,10 @@
    margin: 0;
    padding: 10px;
   }
+  .li {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .li:hover {
+    color: red;
+  }

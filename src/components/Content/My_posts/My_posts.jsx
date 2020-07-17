@@ -6,9 +6,7 @@ const Posts = () => {
     return (
         <div className={clases.posts}>
           <Post />
-          <Post />
-          <Post />
-          <Post />
+
         </div>
     )
 }

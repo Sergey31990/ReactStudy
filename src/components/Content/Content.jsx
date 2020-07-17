@@ -1,6 +1,7 @@
 import React from 'react';
-import  clases from './Content.module.css';
+import clases from './Content.module.css';
 import Posts from './My_posts/My_posts';
+
 
 const Content = () => {
     return (

@@ -1,0 +1,11 @@
+.dialog {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.dialog_list,
+.dialog_message {
+  padding: 10px 20px;
+}
+.dialog_list {
+  border-right: 1px solid black;
+}

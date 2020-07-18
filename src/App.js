@@ -18,11 +18,22 @@ const App = (props) => {
         <Header />
         <Nav />
         <div className={clases.content}>
-          <Route path="/content" component={Content} />
+          <Route
+            path="/content"
+            render={() => <Content dataPost={props.state.content.post} />}
+          />
           <Route path="/music" component={Music} />
           <Route path="/groups" component={Groups} />
           <Route path="/friends" component={Friends} />
-          <Route path="/dialog" component={Dialog} />
+          <Route
+            path="/dialog"
+            render={() => (
+              <Dialog
+                dataUsers={props.state.dialog.users}
+                dataMessage={props.state.dialog.messages}
+              />
+            )}
+          />
         </div>
         <Footer />
       </div>

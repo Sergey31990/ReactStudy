@@ -30,11 +30,6 @@ let state = {
           "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/28/286d76e16bc975499fcd20c4a57793c5408c1dba.jpg",
         text: "text 3",
       },
-      {
-        ava:
-          "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/13/13332b90e2d76fe2728a07f8e77cc70ac4215bcb.jpg",
-        text: "text 4",
-      },
     ],
   },
 };

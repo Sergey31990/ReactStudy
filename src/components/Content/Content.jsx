@@ -1,6 +1,7 @@
 import React from "react";
 import clases from "./Content.module.css";
 import Posts from "./My_posts/My_posts";
+import AddPost from "./addPost/AddPost";
 
 const Content = (props) => {
   return (
@@ -11,6 +12,7 @@ const Content = (props) => {
         alt="фото"
       ></img>
       <Posts dataPost={props.dataPost} />
+      <AddPost />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 .content {
-    grid-area: content;
-    display: grid;
-    border: 1px solid black;
-    background-color: #76cff5;
-  }
-  .content_img {
-   width: 100%;
-   height: 200px;
-  }
+  grid-area: content;
+
+  border: 1px solid black;
+  background-color: #76cff5;
+}
+.content_img {
+  width: 100%;
+  height: 200px;
+}

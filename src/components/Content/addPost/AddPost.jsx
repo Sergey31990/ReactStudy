@@ -3,12 +3,13 @@ import clases from "./addPost.module.css";
 
 let textarea = React.createRef();
 
-let addPost = () => {
-  let text = textarea.current.value;
-  alert(text);
-};
-
 const AddPost = (props) => {
+  let addPost = () => {
+    let text = textarea.current.value;
+    props.addPost(text);
+    textarea.current.value = "";
+  };
+
   return (
     <div className={clases.addPost}>
       <textarea ref={textarea} className={clases.addPost_textarea}></textarea>

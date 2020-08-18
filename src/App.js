@@ -10,6 +10,7 @@ import clases from "./components/Content/Content.module.css";
 import Dialog from "./components/Dialog/Dialog";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Route } from "react-router-dom";
+import { addPost } from "./redux/state";
 
 const App = (props) => {
   return (
@@ -20,7 +21,12 @@ const App = (props) => {
         <div className={clases.content}>
           <Route
             path="/content"
-            render={() => <Content dataPost={props.state.content.post} />}
+            render={() => (
+              <Content
+                dataPost={props.state.content.post}
+                addPost={props.addPost}
+              />
+            )}
           />
           <Route path="/music" component={Music} />
           <Route path="/groups" component={Groups} />

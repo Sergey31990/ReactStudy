@@ -12,7 +12,7 @@ const Content = (props) => {
         alt="фото"
       ></img>
       <Posts dataPost={props.dataPost} />
-      <AddPost />
+      <AddPost addPost={props.addPost} />
     </div>
   );
 };

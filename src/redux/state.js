@@ -1,3 +1,4 @@
+import { renderEntireTree } from "../render";
 let state = {
   dialog: {
     users: [
@@ -32,6 +33,16 @@ let state = {
       },
     ],
   },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    ava:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/360px-Portrait_Placeholder.png",
+    text: postMessage,
+  };
+  state.content.post.push(newPost);
+  renderEntireTree(state);
 };
 
 export default state;

@@ -4,6 +4,7 @@ import Posts from "./My_posts/My_posts";
 import AddPost from "./addPost/AddPost";
 
 const Content = (props) => {
+  console.log(props);
   return (
     <div>
       <img
@@ -12,7 +13,11 @@ const Content = (props) => {
         alt="фото"
       ></img>
       <Posts dataPost={props.dataPost} />
-      <AddPost addPost={props.addPost} />
+      <AddPost
+        addPost={props.addPost}
+        newPost={props.newPost}
+        changeNewPostText={props.changeNewPostText}
+      />
     </div>
   );
 };

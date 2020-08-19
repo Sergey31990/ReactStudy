@@ -32,16 +32,23 @@ let state = {
         text: "text 3",
       },
     ],
+    newPost: "",
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     ava:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/360px-Portrait_Placeholder.png",
-    text: postMessage,
+    text: state.content.newPost,
   };
   state.content.post.push(newPost);
+  renderEntireTree(state);
+};
+
+export let changeNewPostText = (postMessage) => {
+  let newPost = postMessage;
+  state.content.newPost = postMessage;
   renderEntireTree(state);
 };
 

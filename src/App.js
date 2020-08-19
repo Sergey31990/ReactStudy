@@ -11,6 +11,7 @@ import Dialog from "./components/Dialog/Dialog";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Route } from "react-router-dom";
 import { addPost } from "./redux/state";
+import { changeNewPostText } from "./redux/state";
 
 const App = (props) => {
   return (
@@ -25,6 +26,8 @@ const App = (props) => {
               <Content
                 dataPost={props.state.content.post}
                 addPost={props.addPost}
+                newPost={props.state.content.newPost}
+                changeNewPostText={props.changeNewPostText}
               />
             )}
           />

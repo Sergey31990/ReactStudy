@@ -15,12 +15,13 @@ const Message = (props) => {
 };
 
 const Dialog = (props) => {
+  debugger;
   console.log(props);
-  let usersArr = props.dataUsers.map((el) => (
+  let usersArr = props.dialog.users.map((el) => (
     <DialogItem name={el.name} id={el.id} />
   ));
 
-  let messagesArr = props.dataMessage.map((el) => (
+  let messagesArr = props.dialog.messages.map((el) => (
     <Message text={el.messageText} />
   ));
   return (

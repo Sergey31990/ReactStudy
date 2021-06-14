@@ -4,7 +4,6 @@ import Posts from "./My_posts/My_posts";
 import AddPost from "./addPost/AddPost";
 
 const Content = (props) => {
-  console.log(props);
   return (
     <div>
       <img
@@ -12,11 +11,10 @@ const Content = (props) => {
         src="https://plast-plus.ru/upload/iblock/c94/25.jpg"
         alt="фото"
       ></img>
-      <Posts dataPost={props.dataPost} />
+      <Posts state={props.state} />
       <AddPost
-        addPost={props.addPost}
-        newPost={props.newPost}
-        changeNewPostText={props.changeNewPostText}
+        state={props.state}
+        dispatch={props.dispatch}
       />
     </div>
   );

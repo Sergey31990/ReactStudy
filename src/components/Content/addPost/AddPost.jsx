@@ -4,14 +4,15 @@ import clases from "./addPost.module.css";
 let textarea = React.createRef();
 
 const AddPost = (props) => {
+
   let addPost = () => {
-    props.addPost();
-    props.changeNewPostText("");
+    props.dispatch({type: 'ADD-POST'});
   };
 
   let onChange = () => {
     let text = textarea.current.value;
-    props.changeNewPostText(text);
+    console.log(text);
+    props.dispatch({type: 'CHANGE-NEW-POST-TEXT', postMessage: `${text}`});
   };
 
   return (
@@ -20,7 +21,7 @@ const AddPost = (props) => {
         onChange={onChange}
         ref={textarea}
         className={clases.addPost_textarea}
-        value={props.newPost}
+        value={props.state.content.newPost}
       ></textarea>
       <button onClick={addPost} className={clases.addPost_btn}>
         Добавить

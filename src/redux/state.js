@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST';
+const CHANGE_NEW_POST_TEXT = 'CHANGE-NEW-POST-TEXT';
+
+
 let store ={
     _state: {
       dialog: {
@@ -62,6 +66,22 @@ let store ={
       }
     }
 }
+
+//Ф-я котороя возвращает объект Action AddPost
+export const addPostActionCreator = () => {
+  return {
+    type: ADD_POST
+  }
+};
+
+//Ф-я котороя возвращает объект Action changePost
+export const changePostActionCreator = (text) => {
+  return {
+    type: CHANGE_NEW_POST_TEXT,
+    postMessage: text
+  }
+};
+
 
 export default store;
 window.store = store;

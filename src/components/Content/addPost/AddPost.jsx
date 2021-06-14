@@ -1,18 +1,17 @@
 import React from "react";
 import clases from "./addPost.module.css";
+import {addPostActionCreator, changePostActionCreator} from "../../../redux/state.js";
 
 let textarea = React.createRef();
 
 const AddPost = (props) => {
-
   let addPost = () => {
-    props.dispatch({type: 'ADD-POST'});
+    props.dispatch(addPostActionCreator());
   };
 
   let onChange = () => {
     let text = textarea.current.value;
-    console.log(text);
-    props.dispatch({type: 'CHANGE-NEW-POST-TEXT', postMessage: `${text}`});
+    props.dispatch(changePostActionCreator(text));
   };
 
   return (

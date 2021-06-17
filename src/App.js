@@ -8,13 +8,14 @@ import Music from "./components/Music/Music";
 import Groups from "./components/Groups/Groups";
 import Friends from "./components/Friends/Friends";
 import clases from "./components/Content/Content.module.css";
-import Dialog from "./components/Dialog/Dialog";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+import DialogContainer from "./components/Dialog/DialogContainer";
 
+
+//Route следят за URL и отрисовывают ту компоненту которя указана, а URL меняют NavLink
 const App = (props) => {
   return (
-    <BrowserRouter>
       <div className="MainPage">
         <Header />
         <Nav />
@@ -29,13 +30,13 @@ const App = (props) => {
           <Route path="/groups" component={Groups} />
           <Route path="/friends" component={Friends} />
           <Route path="/dialog" render={() => (
-           <Dialog 
-            dialog={props.state.dialog} 
+           <DialogContainer
+            dialog={props.state.dialog}
+            dispatch={props.dispatch} 
           />)}/>
         </div>
         <Footer />
       </div>
-    </BrowserRouter>
   );
 };
 

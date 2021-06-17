@@ -1,11 +1,43 @@
-.dialog {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+.dialog{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 20px;
 }
-.dialog_list,
-.dialog_message {
-  padding: 10px 20px;
+.ulList{
+    padding-left: 10px;
+    list-style-type: none;
+    margin: 0;
 }
-.dialog_list {
-  border-right: 1px solid black;
+.ulList li{
+    margin: 0;
 }
+.addPost {
+    padding: 10px 15px;
+  }
+  .addPost_textarea {
+    display: block;
+    width: 99.4%;
+    margin-left: auto;
+    text-decoration: none;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid grey;
+    height: 50px;
+    resize: none;
+  }
+  .addPost_btn {
+    outline: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    padding: 5px 7px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+  }
+  .addPost_btn:hover {
+    border: 1px solid black;
+  }

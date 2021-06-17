@@ -2,16 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import store from "./redux/state";
+import store from "./redux/store";
+import {BrowserRouter} from 'react-router-dom';
 
 let renderEntireTree = () => {
   ReactDOM.render(
-    <React.StrictMode>
+    //BrowserRouter нужен для Маршрутизации, оборачиваем 1 раз приложение App
+    <BrowserRouter>
       <App
         state={store._state}
         dispatch={store.dispatch.bind(store)}
       />
-    </React.StrictMode>,
+    </BrowserRouter>,
     document.getElementById("root")
   );
 };

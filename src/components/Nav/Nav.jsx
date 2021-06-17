@@ -1,7 +1,7 @@
 import React from "react";
 import clases from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
-
+//NavLink меняют URL
 const Nav = () => {
   return (
     <nav className={clases.nav}>

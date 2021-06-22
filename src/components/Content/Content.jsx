@@ -1,9 +1,9 @@
 import React from "react";
 import clases from "./Content.module.css";
-import Posts from "./My_posts/My_posts";
 import AddPostContainer from "./addPost/AddPostContainer";
+import MyPostsContainer from "./My_posts/MypostsContainer";
 
-const Content = (props) => {
+const Content = () => {
     return (
         <div>
             <img
@@ -11,11 +11,14 @@ const Content = (props) => {
                 src="https://plast-plus.ru/upload/iblock/c94/25.jpg"
                 alt="фото"
             ></img>
-            <Posts state={props.state}/>
-            <AddPostContainer state={props.state}
-                              dispatch={props.dispatch}/>
+
+            <MyPostsContainer />
+            <AddPostContainer />
         </div>
     );
 };
 
 export default Content;
+
+
+

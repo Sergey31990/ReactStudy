@@ -16,25 +16,29 @@ let initialState = {
     ],
     newMessageBody: ''
 };
-
+//initialState нужен для первого раза, дальше будет приходить обновленный state
 const dialogReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case UPDATE_NEW_POST_BODY:
-            state.newMessageBody = action.textBody;
-            return state;
+             return {
+                ...state,
+                newMessageBody : action.textBody
+            };
         case SEND_MESSAGE:
-            state.newMessageBody = '';
-            state.messages.push({id: 6, messageText: action.newText});
-            return state;
+            return {
+                ...state,
+                messages: [...state.messages, {id: 6, messageText: state.newMessageBody}],
+                newMessageBody : '',
+            };
         default:
             return state;
     }
 };
 
-export const sendMessageCreator = (text) => {
+export const sendMessageCreator = () => {
     return {
-        type: SEND_MESSAGE,
-        newText: text
+        type: SEND_MESSAGE
     };
 };
 

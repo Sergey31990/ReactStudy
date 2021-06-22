@@ -2,23 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import store from "./redux/store";
+import store from "./redux/redux-store";
 import {BrowserRouter} from 'react-router-dom';
+import {Provider} from "react-redux";
 
-let renderEntireTree = () => {
-  ReactDOM.render(
+ReactDOM.render(
     //BrowserRouter нужен для Маршрутизации, оборачиваем 1 раз приложение App
+    //Provider передает store дереву компонентов
     <BrowserRouter>
-      <App
-        state={store._state}
-        dispatch={store.dispatch.bind(store)}
-      />
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </BrowserRouter>,
     document.getElementById("root")
-  );
-};
+);
 
-renderEntireTree(store.getState());
-//Передаем функцию renderEntireTree в state
-store.subscribe(renderEntireTree);
+
+
+
+
+
+
+
+
 

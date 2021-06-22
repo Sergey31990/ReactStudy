@@ -17,22 +17,16 @@ const Dialog = (props) => {
         return <p>{props.text}</p>;
     };
 
-    let usersArr = props.users.map((el) => (
-        <DialogItem name={el.name} id={el.id}/>
-    ));
+    let usersArr = props.dialog.users.map((el) => (<DialogItem name={el.name} key={el.id} id={el.id}/>));
+    let messagesArr = props.dialog.messages.map((el) => (<Message key={el.id} text={el.messageText}/>));
 
-    let messagesArr = props.messages.map((el) => (
-        <Message text={el.messageText}/>
-    ));
-
-    let onsendMessage = () => {
+    let onSendMessage = () => {
         props.sendMessage();
     };
 
-
-    let onupdateMessage = (e) => {
+    let onUpdateMessage = (e) => {
         let body = e.target.value;
-        // props.dispatch(updateNewPostMessageCreator(body));
+        debugger;
         props.updateMessage(body);
     }
 
@@ -44,9 +38,9 @@ const Dialog = (props) => {
                 </div>
                 <div>{messagesArr}</div>
             </div>
-            <textarea value={props.newMessageBody} onChange={onupdateMessage}
+            <textarea value={props.dialog.newMessageBody} onChange={onUpdateMessage}
                       className={clases.addPost_textarea}></textarea>
-            <button onClick={onsendMessage} className={clases.addPost_btn}>Отправить</button>
+            <button onClick={onSendMessage} className={clases.addPost_btn}>Отправить</button>
         </>
     );
 };

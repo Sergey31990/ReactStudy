@@ -1,26 +1,28 @@
-import React from "react";
 import {updateNewPostMessageCreator, sendMessageCreator} from "../../redux/dialog-reducer";
 import Dialog from "./Dialog";
+import {connect} from "react-redux/";
 
 
-const DialogContainer = (props) => {
-    debugger
-    console.log(props);
-
-    let newMessageBody = props.dialog.newMessageBody;
-
-    let sendMessage = () => {
-        props.dispatch(sendMessageCreator(newMessageBody))
-    };
-    let updateMessage = (body) => {
-        props.dispatch(updateNewPostMessageCreator(body));
+//Функция для state
+const mapStateToProps = (state) => {
+    return {
+        dialog: state.dialog
     }
-    return (<Dialog users={props.dialog.users}
-                    messages={props.dialog.messages}
-                    sendMessage={sendMessage}
-                    updateMessage={updateMessage}
-                    newMessageBody={newMessageBody}
-                    />);
-};
+}
+//Функция для dispatch
+const mapDispathToProps = (dispatch) => {
+    return {
+        updateMessage: (body) => {
+            dispatch(updateNewPostMessageCreator(body));
+        },
+        sendMessage: () => {
+
+            dispatch(sendMessageCreator());
+        }
+    }
+}
+
+//Функция connect соединяет Dialog с store
+const DialogContainer = connect(mapStateToProps, mapDispathToProps)(Dialog);
 
 export default DialogContainer;

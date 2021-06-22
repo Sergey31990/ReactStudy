@@ -1,14 +1,17 @@
 import {combineReducers, createStore} from "redux";
 import profileReducer from "./profile-reducer";
 import dialogReducer from "./dialog-reducer";
+import storeInit from "./storeInit"
+import usersReducer from "./users-reducer";
 
 
 //Функция combineReducers принимает {} с reducers
-let reducersPack= combineReducers({
+let reducers = combineReducers({
     content : profileReducer,
-    dialog : dialogReducer
+    dialog : dialogReducer,
+    users: usersReducer
 });
 
-let store = createStore();
-
+let store = createStore(reducers, storeInit);
+window.store = store;
 export default store;

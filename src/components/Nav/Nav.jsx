@@ -22,8 +22,8 @@ const Nav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/friends" activeClassName={clases.active}>
-            Друзья
+          <NavLink to="/users" activeClassName={clases.active}>
+            Пользователи
           </NavLink>
         </li>
         <li>

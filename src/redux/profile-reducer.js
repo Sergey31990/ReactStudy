@@ -21,8 +21,8 @@ let initialState = {
         ],
         newPost: "",
     };
-
-
+//Редюсер (reducer) — это чистая функция, которая принимает предыдущее состояние и экшен
+// (state и action) и возвращает следующее состояние (новую версию предыдущего).
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
@@ -31,12 +31,16 @@ const profileReducer = (state = initialState, action) => {
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/360px-Portrait_Placeholder.png",
                 text: state.newPost,
             };
-            state.post.push(newPost);
-            state.newPost = '';
-            return state;
+            return {
+                ...state,
+                post : [...state.post, newPost],
+                newPost : ''
+            };
         case CHANGE_NEW_POST_TEXT:
-            state.newPost = action.postMessage;
-            return state;
+            return {
+                ...state,
+                newPost : action.postMessage
+            };
         default:
             return state;
     }
@@ -52,6 +56,7 @@ const profileReducer = (state = initialState, action) => {
             type: CHANGE_NEW_POST_TEXT,
             postMessage: text
         };
+
     };
 
     export default profileReducer;

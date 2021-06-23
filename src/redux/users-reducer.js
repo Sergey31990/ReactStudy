@@ -44,10 +44,12 @@ const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case FOLLOW: {
+            debugger;
             let copyState = {
                 users: [...state]
             }
             copyState.users.map((el, i) => {
+                debugger;
                 if (el.id === action.userId) {
                     el.followed = true;
                 }
@@ -65,10 +67,17 @@ const usersReducer = (state = initialState, action) => {
             })
             return copyState.users;
         }
-        case SET_USERS:
-            return {
-                ...state, users: [...state.users, ...action.users]
+        case SET_USERS: {
+            let copyState = {
+                users: [...state, ...action.users]
             }
+            debugger;
+            return copyState.users;
+        }
+            // debugger;
+            // return {
+            //     ...state, users: [...state.users, ...action.users]
+            // }
         default:
             return state;
     }

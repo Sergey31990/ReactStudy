@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className={clases.nav}>
       <ul className={clases.ul}>
         <li>
-          <NavLink to="/content" activeClassName={clases.active}>
+          <NavLink to="/profile" activeClassName={clases.active}>
             Моя страница
           </NavLink>
         </li>

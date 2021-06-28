@@ -1,82 +1,50 @@
 import React from "react";
 import clases from "./Users.module.css";
-import * as axios from "axios";
+import Preloader from "../Preloader/Preloader";
+import {NavLink} from "react-router-dom";
+import {Col} from "react-bootstrap";
 
-// const Users = (props) => {
-//     let getUsers = () => {
-//         if (props.users.length === 0) {
-//             axios.get('https://social-network.samuraijs.com/api/1.0/users')
-//                 .then(response => {
-//                     console.log(response.data.items)
-//                     debugger;
-//                     props.setUsers(response.data.items)
-//                 })
-//         }
-//     }
-//
-//     return <div>
-//         <button onClick={getUsers}>Get Users</button>
-//         {
-//             props.users.map((el, i) =>
-//                 <div className={clases.users} key={i}>
-//                     <div className={clases.blockAva}>
-//                         <img className={clases.blockAva_img} src={el.photoUrl} alt=""/>
-//                         <div>
-//                             {el.followed
-//                                 ? <button className={clases.blockAva_btn} onClick={() => {
-//                                     props.unfollow(i)
-//                                 }}>Unfollow</button>
-//                                 : <button className={clases.blockAva_btn} onClick={() => {
-//                                     props.follow(i)
-//                                 }}>follow</button>
-//                             }
-//                         </div>
-//                     </div>
-//                     <div className={clases.blockText}>
-//                         <div className={clases.nameblock}>
-//                             <div className={clases.name}>{el.name}</div>
-//                             <div className={clases.status}>{el.status}</div>
-//                         </div>
-//                         <div className={clases.countryblock}>
-//                             <div className="">{'el.location.country'}</div>
-//                             <div className="">{'el.location.city'}</div>
-//                         </div>
-//                     </div>
-//                 </div>)
-//         }
-//
-//     </div>
-//
-//
-// };
+const defoltAva = "https://createchbd.com/wp-content/uploads/2018/12/1-150x150-150x150.png";
 
-class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
-            .then(response => {
-                this.props.setUsers(response.data.items)
-            })
-    }
-    render() {
-        debugger;
-        return <div>
-            {this.props.users.map((el, i) =>
+let Users = (props) => {
+
+    let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
+         let pages = [];
+        for (let i = 1; i <= pageCount; i++) {
+           pages.push(i);
+       }
+
+    return (
+        <div>
+            <Preloader isFetching={props.isFetching}/>
+            <div>
+                {pages.map((el, i) => {
+                    return <span key={i} onClick={() => {
+                        props.onPageChanged(el)
+                    }}
+                                 className={`${props.currentPage === el && clases.activePage} ${clases.paginationNumber}`}>{el}</span>
+                })}
+            </div>
+            {props.users.map((el, i) =>
                 <div className={clases.users} key={i}>
-                    <div className={clases.blockAva}>
-                        <img className={clases.blockAva_img} src={el.photoUrl} alt=""/>
+                    <Col xs={2} className={clases.blockAva}>
+                        <NavLink to={'/profileInfo/' + el.id}>
+                            <img className={clases.blockAva_img} src={el.photos.small != null ? el.photos.small : defoltAva} alt="defoltAva"/>
+                        </NavLink>
                         <div>
                             {el.followed
                                 ? <button className={clases.blockAva_btn} onClick={() => {
-                                    this.props.unfollow(el.id)
+
+                                    debugger;
+                                    props.unfollow(el.id)
                                 }}>Unfollow</button>
                                 : <button className={clases.blockAva_btn} onClick={() => {
-                                    this.props.follow(el.id)
+                                    props.follow(el.id)
                                 }}>follow</button>
                             }
                         </div>
-                    </div>
-                    <div className={clases.blockText}>
+                    </Col>
+                    <Col xs={10} className={clases.blockText}>
                         <div className={clases.nameblock}>
                             <div className={clases.name}>{el.name}</div>
                             <div className={clases.status}>{el.status}</div>
@@ -85,11 +53,11 @@ class Users extends React.Component {
                             <div className="">Country</div>
                             <div className="">City</div>
                         </div>
-                    </div>
+                    </Col>
                 </div>)}
         </div>
-    }
+    )
 }
-
-
 export default Users;
+
+

@@ -5,7 +5,7 @@ import My_posts from "./My_posts";
 //Функция для state
 const mapStateToProps = (state) => {
     return {
-        post: state.content.post
+        post: state.profilePage.post
     }
 }
 //Функция для dispatch

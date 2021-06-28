@@ -1,9 +1,10 @@
 import React from "react";
-import clases from "./Content.module.css";
+import clases from "./Profile.module.css";
 import AddPostContainer from "./addPost/AddPostContainer";
 import MyPostsContainer from "./My_posts/MypostsContainer";
 
-const Content = () => {
+
+const Profile = (props) => {
     return (
         <div>
             <img
@@ -18,7 +19,7 @@ const Content = () => {
     );
 };
 
-export default Content;
+export default Profile;
 
 
 

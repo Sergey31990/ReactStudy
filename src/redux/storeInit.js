@@ -1,5 +1,5 @@
 let storeInit = {
-    dialog: {
+    dialogPage: {
         users: [
             {name: "Andry", id: 1},
             {name: "Kate", id: 2},
@@ -14,7 +14,7 @@ let storeInit = {
         ],
         newMessageBody: ''
     },
-    content: {
+    profilePage: {
         post: [
             {
                 ava:
@@ -33,41 +33,17 @@ let storeInit = {
             },
         ],
         newPost: "",
+        profile: {}
     },
-    users: [
-    //     {
-    //         id: 0,
-    //         photoUrl: 'https://createchbd.com/wp-content/uploads/2018/12/1-150x150-150x150.png',
-    //         followed: false,
-    //         fullName: 'Dmitry',
-    //         status: 'Im fine',
-    //         location: {city: 'Minsk', country: 'Belarus'}
-    //     },
-    //     {
-    //         id: 1,
-    //         photoUrl: 'https://createchbd.com/wp-content/uploads/2018/12/1-150x150-150x150.png',
-    //         followed: false,
-    //         fullName: 'Sergey',
-    //         status: 'Im fine',
-    //         location: {city: 'Moscow', country: 'Russia'}
-    //     },
-    //     {
-    //         id: 2,
-    //         photoUrl: 'https://createchbd.com/wp-content/uploads/2018/12/1-150x150-150x150.png',
-    //         followed: false,
-    //         fullName: 'Alexandr',
-    //         status: 'Im fine',
-    //         location: {city: 'Kiev', country: 'Ukraine'}
-    //     },
-    //     {
-    //         id: 3,
-    //         photoUrl: 'https://createchbd.com/wp-content/uploads/2018/12/1-150x150-150x150.png',
-    //         followed: false,
-    //         fullName: 'David',
-    //         status: 'Im fine',
-    //         location: {city: 'NewYork', country: 'USA'}
-    //     },
-    ]
+    usersPage: {
+        users: [],
+        pageSize: 5,
+        totalUsersCount: 0,
+        currentPage: 1,
+        isFetching: false
+    }
+
+
 };
 export default storeInit;
 

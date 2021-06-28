@@ -3,10 +3,9 @@
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
-    background: #b8f0af;
+    border-bottom: 1px solid grey;
 }
 .ava {
     width: 40px;

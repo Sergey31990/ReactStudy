@@ -9,6 +9,7 @@ const AddPost = (props) => {
     };
 
     let onChange = () => {
+        debugger;
         let text = textarea.current.value;
         props.updateNewPostText(text);
 

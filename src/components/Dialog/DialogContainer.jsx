@@ -6,7 +6,7 @@ import {connect} from "react-redux/";
 //Функция для state
 const mapStateToProps = (state) => {
     return {
-        dialog: state.dialog
+        dialog: state.dialogPage
     }
 }
 //Функция для dispatch

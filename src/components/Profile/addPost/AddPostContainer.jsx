@@ -2,17 +2,12 @@ import {addPostActionCreator, changePostActionCreator} from "../../../redux/prof
 import AddPost from "./AddPost";
 import {connect} from "react-redux/";
 
-
-
-
-
-//Функция для state
 const mapStateToProps = (state) => {
     return {
-        newPost: state.content.newPost,
+        newPost: state.profilePage.newPost,
+
     }
 }
-//Функция для dispatch
 const mapDispathToProps = (dispatch) => {
     return {
         addPost: () => {

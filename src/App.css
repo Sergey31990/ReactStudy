@@ -1,12 +1,6 @@
 .MainPage {
   margin: 0 auto;
-  display: grid; 
-  width: 1200px;
-  grid-template-areas: 
-  "header header header"
-  "navigation content content"
-  "footer footer footer";
-  grid-gap: 10px
+  padding-top: 60px;
 }
 
 

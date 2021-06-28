@@ -1,0 +1,12 @@
+.content {
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px 25px;
+}
+.content_img {
+  border-radius: 3px;
+  width: 100%;
+  height: 200px;
+}
+
